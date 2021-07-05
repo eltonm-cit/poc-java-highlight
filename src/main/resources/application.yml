@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: 'basejavaproject'
+  profiles:
+    active: local
+
+server:
+  port: 8083
+  http2:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: loggers, health, info, prometheus, metric
+    health:
+      show-details: always
+
+hero-api:
+  base-url: http://gateway.marvel.com/
+  public-key: a237cc76fda1731eda4b52a6bba773c3
+  private-key: 7e21b558c03bbd346c5b1fffe327ada1fb056d2e
